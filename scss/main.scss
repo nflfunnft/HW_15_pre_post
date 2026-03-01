@@ -1,3 +1,4 @@
+// scss/main.scss
 @use 'vars' as v;
 @use 'mixins' as m;
 
@@ -42,28 +43,23 @@ body {
     }
 
     &__divider {
-        @include m.flex-center($gap: 15px);
+        // Довгі лінії для заголовка
+        @include m.decorative-divider(210px, 1px, 5px);
         margin-top: 15px;
 
-        &::before,
-        &::after {
-            content: "";
-            @include m.line(50px, 1px);
-        }
-
-        &-icon {
-            @include m.line(8px, 8px);
-            transform: rotate(45deg);
+        img {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
         }
     }
 
     &__body {
-        @include m.flex-center($gap: 170px); // 85px + 85px згідно з макетом
+        @include m.flex-center($gap: 170px);
         position: relative;
         max-width: 1030px;
         margin: 0 auto;
 
-        // Вертикальна лінія-розділювач
         &::before {
             content: "";
             position: absolute;
@@ -94,7 +90,6 @@ body {
         object-fit: cover;
         position: relative;
         z-index: 2;
-        border: 1px solid v.$clr-accent;
     }
 
     &__photo-frame {
@@ -140,7 +135,6 @@ body {
             background-color: v.$clr-accent;
             border-color: v.$clr-accent;
             color: v.$clr-white;
-            transform: translateY(-3px);
         }
     }
 
@@ -151,22 +145,24 @@ body {
     }
 
     &__status {
-        @include m.flex-center($gap: 5px);
+        // Короткі товсті лінії 20x4 з макета
+        @include m.decorative-divider(10px, 4px, 5px);
         margin-bottom: 40px;
 
-        span {
-            @include m.line(15px, 3px);
+        img {
+            width: 20px;
+            height: 4px;
+            object-fit: contain;
         }
     }
 
     &__button {
         display: inline-block;
         padding: 12px 35px;
-        border: 1px solid v.$clr-accent;
+        border: 2px solid v.$clr-accent;
         color: v.$clr-text-main;
         text-decoration: none;
         text-transform: uppercase;
-        font-family: v.$ff-secondary;
         font-weight: bold;
         transition: 0.3s;
 

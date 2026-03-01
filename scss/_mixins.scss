@@ -1,3 +1,4 @@
+// scss/_mixins.scss
 @use 'vars' as v;
 
 @mixin line($width, $height, $bg-color: v.$clr-accent) {
@@ -19,4 +20,18 @@
     height: $size;
     border: $border-width solid v.$clr-accent;
     transform: rotate(45deg);
+}
+
+// Новий універсальний міксин для розділювачів з іконкою по центру
+@mixin decorative-divider($line-width, $line-height, $gap: 15px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap;
+
+    &::before,
+    &::after {
+        content: "";
+        @include line($line-width, $line-height);
+    }
 }

@@ -40,31 +40,28 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 15px;
-  margin-top: 15px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
 }
 .team__divider::before, .team__divider::after {
   content: "";
-  width: 50px;
+  width: 210px;
   height: 1px;
   background-color: #fc0;
 }
-.team__divider-icon {
-  width: 8px;
-  height: 8px;
-  background-color: #fc0;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+.team__divider {
+  margin-top: 15px;
+}
+.team__divider img {
+  width: 18px;
+  height: 18px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .team__body {
   display: -webkit-box;
@@ -128,7 +125,6 @@ body {
      object-fit: cover;
   position: relative;
   z-index: 2;
-  border: 1px solid #fc0;
 }
 .team__photo-frame {
   position: absolute;
@@ -216,8 +212,6 @@ body {
   background-color: #fc0;
   border-color: #fc0;
   color: #fff;
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
 }
 .team__text {
   font-size: 14px;
@@ -228,32 +222,36 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 5px;
+}
+.team__status::before, .team__status::after {
+  content: "";
+  width: 10px;
+  height: 4px;
+  background-color: #fc0;
+}
+.team__status {
   margin-bottom: 40px;
 }
-.team__status span {
-  width: 15px;
-  height: 3px;
-  background-color: #fc0;
+.team__status img {
+  width: 20px;
+  height: 4px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .team__button {
   display: inline-block;
   padding: 12px 35px;
-  border: 1px solid #fc0;
+  border: 2px solid #fc0;
   color: #333;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Roboto", sans-serif;
   font-weight: bold;
   -webkit-transition: 0.3s;
   transition: 0.3s;
