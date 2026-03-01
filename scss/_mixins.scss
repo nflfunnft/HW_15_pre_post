@@ -1,0 +1,22 @@
+@use 'vars' as v;
+
+@mixin line($width, $height, $bg-color: v.$clr-accent) {
+    width: $width;
+    height: $height;
+    background-color: $bg-color;
+}
+
+@mixin flex-center($direction: row, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+}
+
+@mixin rotated-frame($size, $border-width: 2px) {
+    width: $size;
+    height: $size;
+    border: $border-width solid v.$clr-accent;
+    transform: rotate(45deg);
+}
