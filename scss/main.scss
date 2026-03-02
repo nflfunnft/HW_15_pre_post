@@ -32,9 +32,9 @@ body {
     &__subtitle {
         display: block;
         font-family: v.$ff-main;
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 24px;
+        font-size: v.$subtitle-size;
+        font-weight: v.$subtitle-weight;
+        line-height: v.$subtitle-lh;
         color: v.$clr-text-sub;
         margin-bottom: 15px;
         text-transform: uppercase;
@@ -62,12 +62,12 @@ body {
 
     &__body {
         display: flex;
-        justify-content: center;
-        align-items: stretch;
-        gap: 170px;
+        justify-content: space-between; // Блоки по краях
+        align-items: center;
         position: relative;
-        max-width: 1030px;
+        max-width: v.$content-width; // 1030px
         margin: 0 auto;
+        padding: v.$body-padding-vertical 0; // 70px зверху/знизу
 
         &::before {
             content: "";
@@ -83,7 +83,8 @@ body {
     }
 
     &__visual {
-        flex: 0 0 430px;
+        flex: 0 0 v.$block-size; // 430px
+        height: v.$block-size; // 430px
         position: relative;
         @include m.flex-center;
     }
@@ -124,7 +125,9 @@ body {
     }
 
     &__content {
-        flex: 0 0 400px;
+        flex: 0 0 v.$block-size; // 430px
+        max-width: v.$block-size;
+        min-height: v.$block-size;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -138,7 +141,7 @@ body {
         font-weight: v.$name-weight;
         line-height: 1;
         color: v.$name-color;
-        margin-bottom: 25px;
+        margin-bottom: 60px;
         position: relative;
         display: inline-block;
 
@@ -146,10 +149,10 @@ body {
             content: "";
             position: absolute;
             left: 50%;
-            bottom: -10px;
+            bottom: -30px;
             transform: translateX(-50%);
-            width: 50px;
-            height: 2px;
+            width: 100px;
+            height: 1px;
             background-color: v.$clr-accent;
         }
     }
@@ -160,7 +163,7 @@ body {
         font-weight: v.$pos-weight;
         line-height: v.$pos-lh;
         color: v.$pos-color;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
     }
 
     &__socials {
@@ -190,12 +193,12 @@ body {
         font-weight: v.$text-weight;
         line-height: v.$text-lh;
         color: v.$text-color;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     &__status {
         @include m.decorative-divider(10px, 4px, 5px);
-        margin-bottom: 40px;
+        margin-bottom: 25px;
 
         img {
             width: 20px;
@@ -205,14 +208,17 @@ body {
     }
 
     &__button {
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: v.$btn-width; // 118px
+        height: v.$btn-height; // 24px
         font-family: v.$ff-text;
         font-size: v.$btn-size;
         font-weight: v.$btn-weight;
-        line-height: v.$btn-size;
+        line-height: 1;
         color: v.$btn-color;
-        padding: 12px 35px;
-        border: 2px solid v.$clr-accent;
+        border: 1px solid v.$clr-accent;
         text-decoration: none;
         text-transform: uppercase;
         transition: 0.3s;

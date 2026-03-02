@@ -1,39 +1,51 @@
 // scss/_vars.scss
 $clr-white: #ffffff;
-$clr-accent: #FFCC00; // Жовтий акцент
+$clr-accent: #FFCC00;
 $clr-text-main: #333333;
 $clr-text-sub: #898F8F;
-$clr-text-dark-gray: #666666; // Новий колір для імен та посад
+$clr-text-dark-gray: #666666;
 
 // Шрифти
 $ff-main: 'Raleway', sans-serif;
 $ff-secondary: 'Roboto', sans-serif;
 $ff-text: 'Open Sans', sans-serif;
 
-// Параметри заголовка Our Team
+// Геометрія блоків
+$content-width: 1030px;
+$block-size: 430px;
+$body-padding-vertical: 70px;
+
+// THE GENIUSES BEHIND OUR WORK
+$subtitle-size: 18px;
+$subtitle-weight: 500;
+$subtitle-lh: 24px;
+
+// Our Team
 $team-title-size: 60px;
 $team-title-weight: 900;
 $team-title-lh: 66px;
 $team-title-spacing: 40px;
 
-// Параметри імені Sahariar Kabir
+// Sahariar Kabir
 $name-size: 36px;
 $name-weight: 900;
 $name-color: $clr-text-dark-gray;
 
-// Параметри посади Frontend Developer
+// Frontend Developer
 $pos-size: 24px;
 $pos-weight: 400;
 $pos-lh: 36px;
 $pos-color: $clr-text-dark-gray;
 
-// Параметри основного тексту (Lorem ipsum)
+// Lorem ipsum...
 $text-size: 14px;
 $text-weight: 500;
 $text-lh: 24px;
-$text-color: $clr-text-main;
+$text-color: #333333;
 
-// Параметри кнопки
+// View Profile - ТІ САМІ 118x24
+$btn-width: 118px;
+$btn-height: 24px;
 $btn-size: 14px;
 $btn-weight: 700;
 $btn-color: $clr-text-dark-gray;
