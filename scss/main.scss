@@ -31,15 +31,23 @@ body {
 
     &__subtitle {
         display: block;
-        font-size: 14px;
+        font-family: v.$ff-main;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+        color: v.$clr-text-sub;
         margin-bottom: 10px;
+        text-transform: uppercase;
     }
 
     &__title {
-        font-family: v.$ff-main;
-        font-size: 36px;
+        font-family: v.$ff-secondary;
+        font-size: v.$team-title-size;
+        font-weight: v.$team-title-weight;
+        line-height: v.$team-title-lh;
         color: v.$clr-accent;
         text-transform: uppercase;
+        margin-bottom: v.$team-title-spacing;
     }
 
     &__divider {
@@ -56,7 +64,7 @@ body {
     &__body {
         display: flex;
         justify-content: center;
-        align-items: stretch; // Зберігаємо розтягування лінії
+        align-items: stretch;
         gap: 170px;
         position: relative;
         max-width: 1030px;
@@ -71,25 +79,21 @@ body {
             width: 1px;
             background-color: v.$clr-accent;
             transform: translateX(-50%);
-            z-index: 4; // ПРІОРИТЕТ: лінія над маскою-ромбом
+            z-index: 4;
         }
     }
 
     &__visual {
         flex: 0 0 430px;
         position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include m.flex-center;
     }
 
     &__image-box {
         position: relative;
         width: 430px;
         height: 430px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include m.flex-center;
 
         &::before {
             content: "";
@@ -107,7 +111,7 @@ body {
             height: 100%;
             background-color: v.$clr-white;
             transform: rotate(45deg);
-            z-index: 2; // Маска під центральною лінією
+            z-index: 2;
         }
     }
 
@@ -117,7 +121,7 @@ body {
         border: 2px solid v.$clr-accent;
         object-fit: cover;
         position: relative;
-        z-index: 3; // Фото над маскою, але під лінією
+        z-index: 3;
     }
 
     &__content {
@@ -131,13 +135,14 @@ body {
 
     &__name {
         font-family: v.$ff-secondary;
-        font-size: 30px;
-        color: v.$clr-text-main;
-        margin-bottom: 25px; // Збільшено для розміщення лінії
+        font-size: v.$name-size;
+        font-weight: v.$name-weight;
+        line-height: 1;
+        color: v.$name-color;
+        margin-bottom: 25px;
         position: relative;
         display: inline-block;
 
-        // Жовта горизонтальна лінія під ім'ям
         &::after {
             content: "";
             position: absolute;
@@ -151,6 +156,11 @@ body {
     }
 
     &__position {
+        font-family: v.$ff-main;
+        font-size: v.$pos-size;
+        font-weight: v.$pos-weight;
+        line-height: v.$pos-lh;
+        color: v.$pos-color;
         margin-bottom: 25px;
     }
 
@@ -176,8 +186,11 @@ body {
     }
 
     &__text {
-        font-size: 14px;
-        line-height: 1.8;
+        font-family: v.$ff-main;
+        font-size: v.$text-size;
+        font-weight: v.$text-weight;
+        line-height: v.$text-lh;
+        color: v.$text-color;
         margin-bottom: 30px;
     }
 
@@ -194,12 +207,15 @@ body {
 
     &__button {
         display: inline-block;
+        font-family: v.$ff-text;
+        font-size: v.$btn-size;
+        font-weight: v.$btn-weight;
+        line-height: v.$btn-size;
+        color: v.$btn-color;
         padding: 12px 35px;
         border: 2px solid v.$clr-accent;
-        color: v.$clr-text-main;
         text-decoration: none;
         text-transform: uppercase;
-        font-weight: bold;
         transition: 0.3s;
 
         &:hover {
