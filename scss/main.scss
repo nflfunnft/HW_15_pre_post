@@ -1,6 +1,7 @@
 // scss/main.scss
 @use 'vars' as v;
 @use 'mixins' as m;
+@use 'adaptive';
 
 * {
     margin: 0;
@@ -62,12 +63,12 @@ body {
 
     &__body {
         display: flex;
-        justify-content: space-between; // Блоки по краях
+        justify-content: space-between;
         align-items: center;
         position: relative;
-        max-width: v.$content-width; // 1030px
+        max-width: v.$content-width;
         margin: 0 auto;
-        padding: v.$body-padding-vertical 0; // 70px зверху/знизу
+        padding: v.$body-padding-vertical 0;
 
         &::before {
             content: "";
@@ -83,16 +84,18 @@ body {
     }
 
     &__visual {
-        flex: 0 0 v.$block-size; // 430px
-        height: v.$block-size; // 430px
+        flex: 0 0 v.$block-size;
+        height: auto;
         position: relative;
         @include m.flex-center;
     }
 
     &__image-box {
         position: relative;
-        width: 430px;
-        height: 430px;
+        width: 100%;
+        max-width: v.$block-size; // 430px 
+        height: auto;
+        aspect-ratio: 1 / 1;
         @include m.flex-center;
 
         &::before {
@@ -116,8 +119,8 @@ body {
     }
 
     &__photo {
-        width: 400px;
-        height: 400px;
+        width: 93%;
+        height: 93%;
         border: 2px solid v.$clr-accent;
         object-fit: cover;
         position: relative;
@@ -125,9 +128,9 @@ body {
     }
 
     &__content {
-        flex: 0 0 v.$block-size; // 430px
+        flex: 0 0 v.$block-size;
         max-width: v.$block-size;
-        min-height: v.$block-size;
+        min-height: 1px;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -211,8 +214,8 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: v.$btn-width; // 118px
-        height: v.$btn-height; // 24px
+        width: v.$btn-width;
+        height: v.$btn-height;
         font-family: v.$ff-text;
         font-size: v.$btn-size;
         font-weight: v.$btn-weight;
@@ -222,6 +225,7 @@ body {
         text-decoration: none;
         text-transform: uppercase;
         transition: 0.3s;
+        flex-shrink: 0;
 
         &:hover {
             background-color: v.$clr-accent;

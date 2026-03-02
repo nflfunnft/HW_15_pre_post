@@ -1,3 +1,68 @@
+@media (max-width: 1030px) {
+  .team {
+    padding: 20px 0 !important;
+  }
+  .team__header {
+    margin-bottom: 20px;
+  }
+  .team__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px !important;
+    padding: 10px 0 !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .team__body::before {
+    display: none;
+  }
+  .team__visual {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto;
+  }
+  .team__image-box {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+  .team__image-box::before, .team__image-box::after {
+    display: none;
+  }
+  .team__photo {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #FFCC00;
+  }
+  .team__content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 100%;
+    max-width: 430px;
+    min-height: 0;
+  }
+  .team__name {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+  .team__name::after {
+    bottom: -15px;
+  }
+  .team__button {
+    width: 118px;
+    height: 24px;
+    min-width: 118px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -99,7 +164,7 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 430px;
           flex: 0 0 430px;
-  height: 430px;
+  height: auto;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,8 +183,10 @@ body {
 }
 .team__image-box {
   position: relative;
-  width: 430px;
-  height: 430px;
+  width: 100%;
+  max-width: 430px;
+  height: auto;
+  aspect-ratio: 1/1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -154,8 +221,8 @@ body {
   z-index: 2;
 }
 .team__photo {
-  width: 400px;
-  height: 400px;
+  width: 93%;
+  height: 93%;
   border: 2px solid #FFCC00;
   -o-object-fit: cover;
      object-fit: cover;
@@ -167,7 +234,7 @@ body {
       -ms-flex: 0 0 430px;
           flex: 0 0 430px;
   max-width: 430px;
-  min-height: 430px;
+  min-height: 1px;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -316,6 +383,8 @@ body {
   text-transform: uppercase;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .team__button:hover {
   background-color: #FFCC00;

@@ -1,0 +1,74 @@
+// scss/_adaptive.scss
+@use 'vars' as v;
+
+@media (max-width: 1030px) {
+    .team {
+        // Радикально зменшуємо відступи до 20px 
+        padding: 20px 0 !important;
+
+        &__header {
+            margin-bottom: 20px;
+        }
+
+        &__body {
+            flex-direction: column;
+            gap: 20px !important; // Зменшуємо проміжок між фото та текстом
+            padding: 10px 0 !important;
+            align-items: center;
+            text-align: center;
+
+            &::before {
+                display: none; // Прибираємо жовту лінію по центру
+            }
+        }
+
+        &__visual {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 300px; // Обмежуємо розмір фото на мобілках
+            max-height: 300px;
+            margin: 0 auto;
+        }
+
+        &__image-box {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+
+            // ПРИБИРАЄМО РАМКУ-БУТЕРБРОД 
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+
+        &__photo {
+            width: 100%;
+            height: 100%;
+            border: 2px solid v.$clr-accent; // Тонка рамка замість бутерброда
+        }
+
+        &__content {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 430px;
+            min-height: 0; // Прибираємо порожнечу під текстом
+        }
+
+        &__name {
+            font-size: 28px;
+            margin-bottom: 35px;
+
+            &::after {
+                bottom: -15px; // Лінія ближче до імені
+            }
+        }
+
+        &__button {
+            // Кнопка зберігає розмір 118x24
+            width: v.$btn-width;
+            height: v.$btn-height;
+            min-width: v.$btn-width;
+        }
+    }
+}
