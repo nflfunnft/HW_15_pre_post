@@ -43,7 +43,6 @@ body {
     }
 
     &__divider {
-        // Довгі лінії для заголовка
         @include m.decorative-divider(210px, 1px, 5px);
         margin-top: 15px;
 
@@ -55,7 +54,10 @@ body {
     }
 
     &__body {
-        @include m.flex-center($gap: 170px);
+        display: flex;
+        justify-content: center;
+        align-items: stretch; // Зберігаємо розтягування лінії
+        gap: 170px;
         position: relative;
         max-width: 1030px;
         margin: 0 auto;
@@ -64,27 +66,31 @@ body {
             content: "";
             position: absolute;
             left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            top: 0;
+            bottom: 0;
             width: 1px;
-            height: 70%;
             background-color: v.$clr-accent;
+            transform: translateX(-50%);
+            z-index: 4; // ПРІОРИТЕТ: лінія над маскою-ромбом
         }
     }
 
     &__visual {
         flex: 0 0 430px;
         position: relative;
-        @include m.flex-center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__image-box {
         position: relative;
         width: 430px;
         height: 430px;
-        @include m.flex-center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        // ШАР 1: Нижня золота рамка
         &::before {
             content: "";
             position: absolute;
@@ -94,7 +100,6 @@ body {
             z-index: 1;
         }
 
-        // ШАР 2: Біла маска-ромб, що робить розриви
         &::after {
             content: "";
             position: absolute;
@@ -102,7 +107,7 @@ body {
             height: 100%;
             background-color: v.$clr-white;
             transform: rotate(45deg);
-            z-index: 2;
+            z-index: 2; // Маска під центральною лінією
         }
     }
 
@@ -112,20 +117,37 @@ body {
         border: 2px solid v.$clr-accent;
         object-fit: cover;
         position: relative;
-        z-index: 3; // Фото над маскою
+        z-index: 3; // Фото над маскою, але під лінією
     }
 
     &__content {
         flex: 0 0 400px;
         text-align: center;
-        @include m.flex-center($direction: column);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     &__name {
         font-family: v.$ff-secondary;
         font-size: 30px;
         color: v.$clr-text-main;
-        margin-bottom: 5px;
+        margin-bottom: 25px; // Збільшено для розміщення лінії
+        position: relative;
+        display: inline-block;
+
+        // Жовта горизонтальна лінія під ім'ям
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: v.$clr-accent;
+        }
     }
 
     &__position {
@@ -160,7 +182,6 @@ body {
     }
 
     &__status {
-        // Короткі товсті лінії 20x4 з макета
         @include m.decorative-divider(10px, 4px, 5px);
         margin-bottom: 40px;
 
